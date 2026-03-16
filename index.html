@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kathan Patel - Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Custom Configuration for Animations -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        blob: "blob 7s infinite",
+                    },
+                    keyframes: {
+                        blob: {
+                            "0%": { transform: "translate(0px, 0px) scale(1)" },
+                            "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                            "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                            "100%": { transform: "translate(0px, 0px) scale(1)" },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .animation-delay-2000 { animation-delay: 2s; }
+        .animation-delay-4000 { animation-delay: 4s; }
+        
+        /* Ensure Lucide icons inherit text color properly */
+        i[data-lucide] {
+            display: inline-block;
+        }
+    </style>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-200">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#home" class="flex-shrink-0 flex items-center cursor-pointer">
+                    <span class="font-bold text-xl text-blue-600 tracking-tighter">KP.</span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="#about" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">About</a>
+                    <a href="#experience" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Experience</a>
+                    <a href="#education" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Education</a>
+                    <a href="#projects" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Projects</a>
+                    <a href="#contact" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-blue-600 focus:outline-none">
+                        <i data-lucide="menu" id="mobile-menu-icon" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 shadow-lg absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="mobile-link block w-full text-left px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50">Home</a>
+                <a href="#about" class="mobile-link block w-full text-left px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50">About</a>
+                <a href="#experience" class="mobile-link block w-full text-left px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50">Experience</a>
+                <a href="#education" class="mobile-link block w-full text-left px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50">Education</a>
+                <a href="#projects" class="mobile-link block w-full text-left px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50">Projects</a>
+                <a href="#contact" class="mobile-link block w-full text-left px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section id="home" class="relative bg-white pt-20 pb-32 overflow-hidden">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium text-sm mb-6 border border-blue-100">
+                        <span class="flex h-2 w-2 rounded-full bg-blue-600 mr-2"></span>
+                        Available for opportunities
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 mb-6">
+                        Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Kathan Patel</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-slate-600 mb-10 leading-relaxed">
+                        Electronics & Communication Engineer bridging the gap between hardware architecture and smart, connected systems.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="#contact" class="px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold shadow-lg shadow-blue-200 hover:bg-blue-700 hover:-translate-y-1 transition-all duration-200 inline-block">
+                            Get in Touch
+                        </a>
+                        <a href="#projects" class="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-lg font-semibold shadow-sm hover:border-blue-300 hover:text-blue-600 hover:-translate-y-1 transition-all duration-200 flex items-center justify-center gap-2 inline-flex">
+                            View My Work <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Decorative background blobs -->
+            <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+            <div class="absolute top-0 -right-4 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-slate-50 border-t border-slate-100">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center gap-3 mb-12">
+                    <i data-lucide="user" class="text-blue-600 w-8 h-8"></i>
+                    <h2 class="text-3xl font-bold text-slate-900">About Me</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                            I am a passionate Electronics and Communication Engineering student currently pursuing my B.Tech at Pandit Deendayal Energy University (PDEU). My journey in electronics began with a Diploma from Government Polytechnic, giving me a strong, hands-on foundational background.
+                        </p>
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            Having already gained 1 year of professional industry experience as an Service Engineer at LG Electronics, I possess a unique blend of practical troubleshooting skills and advanced academic knowledge. I am deeply interested in IoT (Internet of Things), embedded systems, and creating smart automation solutions that solve real-world problems.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                        <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                            <i data-lucide="cpu" class="text-blue-500 w-5 h-5"></i> Technical Skills
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-md text-sm font-medium border border-blue-100">Embedded Systems</span>
+                            <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-md text-sm font-medium border border-blue-100">IoT</span>
+                            <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-md text-sm font-medium border border-blue-100">C/C++</span>
+                            <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-md text-sm font-medium border border-blue-100">Microcontrollers (Arduino, ESP32)</span>
+                            <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-md text-sm font-medium border border-blue-100">PCB Diagnostics</span>
+                            <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-md text-sm font-medium border border-blue-100">Circuit Troubleshooting</span>
+                            <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-md text-sm font-medium border border-blue-100">Sensors & Actuators</span>
+                            <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-md text-sm font-medium border border-blue-100">Communication Protocols</span>
+                            <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-md text-sm font-medium border border-blue-100">Appliance Servicing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 bg-white border-t border-slate-100">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center gap-3 mb-12">
+                    <i data-lucide="briefcase" class="text-blue-600 w-8 h-8"></i>
+                    <h2 class="text-3xl font-bold text-slate-900">Work Experience</h2>
+                </div>
+                
+                <div class="relative border-l-2 border-blue-200 ml-4 md:ml-0 pl-8 pb-4">
+                    <div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-[9px] top-1 border-4 border-white shadow"></div>
+                    <div class="mb-1 text-sm font-semibold text-blue-600 uppercase tracking-wider">2023 - 2024</div>
+                    <h3 class="text-2xl font-bold text-slate-900">Service Engineer</h3>
+                    <div class="text-lg font-medium text-slate-700 mb-4">LG Electronics</div>
+                    <ul class="list-disc text-slate-600 space-y-2 ml-4">
+                        <li>Diagnosed and serviced a wide range of LG electronic consumer appliances, ensuring optimal functionality and high customer satisfaction.</li>
+                        <li>Conducted on-site troubleshooting, repair, and maintenance, applying deep knowledge of modern appliance circuitry and electronics.</li>
+                        <li>Managed technical service requests, performed PCB (Printed Circuit Board) diagnostics, and accurately logged component replacements.</li>
+                        <li>Worked directly with clients to provide technical support, product usage guidance, and safety compliance instructions based on LG's standard service protocols.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-20 bg-slate-50 border-t border-slate-100">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center gap-3 mb-12">
+                    <i data-lucide="graduation-cap" class="text-blue-600 w-8 h-8"></i>
+                    <h2 class="text-3xl font-bold text-slate-900">Education</h2>
+                </div>
+
+                <div class="space-y-12">
+                    <!-- B.Tech -->
+                    <div class="relative border-l-2 border-blue-200 ml-4 md:ml-0 pl-8">
+                        <div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-[9px] top-1 border-4 border-white shadow"></div>
+                        <div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-2">
+                            <h3 class="text-2xl font-bold text-slate-900">B.Tech in Electronics & Communication Engineering</h3>
+                            <span class="text-sm font-semibold text-blue-600 uppercase tracking-wider bg-blue-50 px-3 py-1 rounded-full w-max mt-2 md:mt-0">Expected 2027</span>
+                        </div>
+                        <div class="text-lg font-medium text-slate-700 mb-2">Pandit Deendayal Energy University (PDEU)</div>
+                        <p class="text-slate-600">
+                            Currently advancing knowledge in modern communication systems, VLSI design, advanced microprocessors, and IoT technologies.
+                        </p>
+                    </div>
+
+                    <!-- Diploma -->
+                    <div class="relative border-l-2 border-blue-200 ml-4 md:ml-0 pl-8">
+                        <div class="absolute w-4 h-4 bg-blue-400 rounded-full -left-[9px] top-1 border-4 border-white shadow"></div>
+                        <div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-2">
+                            <h3 class="text-2xl font-bold text-slate-900">Diploma in Electronics & Communication Engineering</h3>
+                            <span class="text-sm font-semibold text-slate-500 uppercase tracking-wider mt-2 md:mt-0">Passed in 2023</span>
+                        </div>
+                        <div class="text-lg font-medium text-slate-700 mb-2">Government Polytechnic</div>
+                        <p class="text-slate-600">
+                            Built a robust practical foundation in core electronics, circuit analysis, digital electronics, and fundamental communication theories.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-white border-t border-slate-100">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center gap-3 mb-12">
+                    <i data-lucide="code" class="text-blue-600 w-8 h-8"></i>
+                    <h2 class="text-3xl font-bold text-slate-900">Featured Projects</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Project 1 -->
+                    <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:shadow-lg hover:border-blue-300 transition-all group flex flex-col">
+                        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Smart Switching Board</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed flex-grow">
+                            An IoT-enabled home automation system designed to replace traditional switchboards. Allows users to remotely monitor and control home appliances via a smartphone interface, promoting energy efficiency and convenience.
+                        </p>
+                        <div class="flex gap-2 flex-wrap text-xs font-semibold text-slate-500 mt-auto">
+                            <span class="bg-white px-3 py-1 rounded-full border border-slate-200">IoT</span>
+                            <span class="bg-white px-3 py-1 rounded-full border border-slate-200">ESP8266/ESP32</span>
+                            <span class="bg-white px-3 py-1 rounded-full border border-slate-200">Relays</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:shadow-lg hover:border-blue-300 transition-all group flex flex-col">
+                        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="map-pin" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Smart IV Bag System</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed flex-grow">
+                            A healthcare-focused hardware project that continuously monitors the fluid level in an IV bag. It automatically triggers local and remote alerts for medical staff when the bag is nearly empty, reducing the risk of air embolism and improving patient care.
+                        </p>
+                        <div class="flex gap-2 flex-wrap text-xs font-semibold text-slate-500 mt-auto">
+                            <span class="bg-white px-3 py-1 rounded-full border border-slate-200">Sensors</span>
+                            <span class="bg-white px-3 py-1 rounded-full border border-slate-200">Microcontroller</span>
+                            <span class="bg-white px-3 py-1 rounded-full border border-slate-200">Healthcare Tech</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:shadow-lg hover:border-blue-300 transition-all group flex flex-col">
+                        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="code" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">FM Transmitter & Receiver</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed flex-grow">
+                            A foundational communication systems project demonstrating analog signal modulation and demodulation. Built from discrete electronic components to transmit and successfully receive audio signals over short distances.
+                        </p>
+                        <div class="flex gap-2 flex-wrap text-xs font-semibold text-slate-500 mt-auto">
+                            <span class="bg-white px-3 py-1 rounded-full border border-slate-200">Analog Electronics</span>
+                            <span class="bg-white px-3 py-1 rounded-full border border-slate-200">Oscillators</span>
+                            <span class="bg-white px-3 py-1 rounded-full border border-slate-200">Antenna Design</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:shadow-lg hover:border-blue-300 transition-all group flex flex-col">
+                        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Greenhouse Management System</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed flex-grow">
+                            An automated agricultural solution designed to maintain optimal environmental conditions for plant growth. The system monitors parameters like temperature, soil moisture, and humidity, and controls cooling fans or water pumps accordingly.
+                        </p>
+                        <div class="flex gap-2 flex-wrap text-xs font-semibold text-slate-500 mt-auto">
+                            <span class="bg-white px-3 py-1 rounded-full border border-slate-200">Automation</span>
+                            <span class="bg-white px-3 py-1 rounded-full border border-slate-200">Environmental Sensors</span>
+                            <span class="bg-white px-3 py-1 rounded-full border border-slate-200">Actuators</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-slate-900 text-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-4xl font-bold mb-6">Let's Connect</h2>
+                        <p class="text-slate-400 text-lg mb-8 max-w-md mx-auto md:mx-0">
+                            Whether you have an opportunity, a project idea, or just want to discuss electronics and technology, I'm always open to talking!
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-center md:justify-start gap-4">
+                                <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-blue-400 flex-shrink-0">
+                                    <i data-lucide="phone" class="w-5 h-5"></i>
+                                </div>
+                                <div class="text-left">
+                                    <p class="text-sm text-slate-400 font-medium">Phone</p>
+                                    <a href="tel:+917567122544" class="text-lg font-semibold hover:text-blue-400 transition-colors">+91 7567122544</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-center md:justify-start gap-4">
+                                <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-blue-400 flex-shrink-0">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </div>
+                                <div class="text-left">
+                                    <p class="text-sm text-slate-400 font-medium">Email</p>
+                                    <a href="mailto:kathanpatel0904@gmail.com" class="text-lg font-semibold hover:text-blue-400 transition-colors">kathanpatel0904@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-center md:justify-start gap-4">
+                                <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-blue-400 flex-shrink-0">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                </div>
+                                <div class="text-left">
+                                    <p class="text-sm text-slate-400 font-medium">Location</p>
+                                    <p class="text-lg font-semibold">Gujarat, India</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-10 flex justify-center md:justify-start gap-4">
+                            <a href="#" class="w-10 h-10 bg-slate-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors">
+                                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-slate-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors">
+                                <i data-lucide="github" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700">
+                        <form class="space-y-4" onsubmit="event.preventDefault();">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-400 mb-1 text-left">Name</label>
+                                <input type="text" placeholder="John Doe" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-400 mb-1 text-left">Email</label>
+                                <input type="email" placeholder="john@example.com" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-400 mb-1 text-left">Message</label>
+                                <textarea rows="4" placeholder="How can I help you?" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex justify-center items-center gap-2">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 py-8 text-center border-t border-slate-800">
+        <p class="text-slate-500 text-sm">
+            © <script>document.write(new Date().getFullYear())</script> Kathan Patel. All rights reserved. <br/>
+            <span class="text-xs mt-2 block opacity-70">Designed for modern ECE professionals.</span>
+        </p>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenuBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+            }
+            lucide.createIcons(); // Re-render icon when changed
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) toggleMenu();
+            });
+        });
+    </script>
+</body>
+</html>
